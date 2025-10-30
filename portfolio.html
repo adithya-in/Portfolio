@@ -1,0 +1,496 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<title>S. Adithya — Hardware Innovator | IoT & Drone Systems Engineer</title>
+
+<!-- Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Preahvihear&family=Poppins:wght@400;500;600;700&family=Poetsen+One&family=Plus+Jakarta+Sans:wght@600&display=swap" rel="stylesheet">
+
+<style>
+  :root{
+    --bg:#0e0614;
+    --panel-dark:#12071a;
+    --accent-1:#763CAC;
+    --accent-2:#4F228D;
+    --glass: rgba(255,255,255,0.04);
+    --muted: #CCD6F6;
+    --white: #FFFFFF;
+    --card-1:#2B215A;
+    --card-2:#2B0B3A;
+    --glass-border: rgba(255,255,255,0.06);
+  }
+
+  /* Reset & base */
+  *{box-sizing:border-box}
+  html,body{height:100%;margin:0;background:linear-gradient(180deg,#fff 0%, #fff 0%);font-family:Poppins, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial}
+  a{color:inherit;text-decoration:none}
+  img{display:block;max-width:100%}
+
+  /* Page shell */
+  .site {
+    min-height:100vh;
+    background: radial-gradient(1200px 800px at 10% 10%, rgba(118,60,172,0.10), transparent 12%),
+                linear-gradient(180deg,var(--bg) 0%, #0b0712 100%);
+    color:var(--white);
+    overflow-x:hidden;
+    position:relative;
+  }
+
+  /* Decorative blobs (parallax) */
+  .blob {
+    position:absolute;border-radius:9999px;pointer-events:none;
+    background: radial-gradient(ellipse 50% 50% at 50% 50%, var(--accent-1) 0%, rgba(50,15,133,0) 100%);
+    mix-blend-mode:screen; opacity:0.95;
+    filter: blur(20px);
+    transform: translate3d(0,0,0);
+  }
+  .blob.b1{ width:385px;height:431px; left:6%; top:5%; }
+  .blob.b2{ width:625px;height:700px; left:40%; top:18%; }
+  .blob.b3{ width:642px;height:720px; left:55%; top:56%; }
+  .blob.b4{ width:572px;height:641px; left:8%; top:72%; }
+  .blob.b5{ width:542px;height:330px; left:44%; top:50%; opacity:0.8; }
+
+  /* Header */
+  header {
+    position:sticky; top:0; z-index:60; backdrop-filter: blur(8px);
+    background: linear-gradient(180deg, rgba(10,6,16,0.55), rgba(10,6,16,0.25));
+    border-bottom:1px solid rgba(255,255,255,0.03);
+  }
+  .nav {
+    max-width:1200px;margin:0 auto;display:flex;align-items:center;justify-content:space-between;padding:20px;
+  }
+  .brand { display:flex;align-items:center; gap:12px; }
+  .brand .logo {
+    width:48px;height:48px;border-radius:12px;background:linear-gradient(135deg,var(--accent-1),var(--accent-2));display:flex;align-items:center;justify-content:center;font-weight:700;font-family:Poetsen One;color:white;box-shadow:0 8px 30px rgba(118,60,172,0.08);
+  }
+  .brand h1{font-family:Preahvihear;margin:0;font-size:16px;line-height:1}
+  .navlinks{display:flex;gap:28px;align-items:center;color:white;font-weight:600;font-family:Plus Jakarta Sans}
+  .navlinks a{opacity:0.95}
+  .navlinks a:hover{opacity:1;text-decoration:underline}
+
+  /* Layout */
+  .container { max-width:1200px;margin:0 auto;padding:40px 22px; position:relative; z-index:10; }
+
+  /* Hero */
+  .hero { display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;padding:80px 0 40px;min-height:560px; }
+  .hero-left { position:relative; }
+  .eyebadge { display:inline-block;background:rgba(255,255,255,0.04);padding:8px 12px;border-radius:999px;border:1px solid var(--glass-border);font-weight:600;font-size:14px;color:var(--muted); margin-bottom:18px; }
+  .hero-title { font-family:Preahvihear;font-size:56px;line-height:1.02;margin:0;color:var(--white); text-shadow:0 6px 30px rgba(0,0,0,0.5) }
+  .hero-sub { font-size:20px;color:rgba(255,255,255,0.88);margin-top:18px;max-width:720px; }
+  .hero-cta { margin-top:26px; display:flex; gap:14px; }
+  .btn-primary { background: linear-gradient(90deg,var(--accent-1),var(--accent-2)); color:#0b0712;padding:12px 18px;border-radius:12px;font-weight:700;border:none;cursor:pointer; box-shadow:0 10px 30px rgba(118,60,172,0.18); }
+  .btn-outline { background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 16px;border-radius:12px;color:var(--white);cursor:pointer }
+
+  /* Right hero card (glassy) */
+  .hero-right { background:linear-gradient(180deg, rgba(255,255,255,0.03), rgba(255,255,255,0.02)); border-radius:14px;padding:20px;border:1px solid rgba(255,255,255,0.04); box-shadow:0 20px 50px rgba(0,0,0,0.45); }
+  .hero-right h3{margin:0;font-size:18px;font-weight:700}
+  
+  .hero-meta{margin-top:12px;color:var(--muted);font-size:14px;line-height:1.6}
+  .hero-stats{display:flex;gap:12px;margin-top:16px}
+  .stat{background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:12px;border-radius:12px;min-width:88px;text-align:center;border:1px solid rgba(255,255,255,0.02)}
+  .stat .num{font-weight:700;font-size:20px}
+
+  /* Sections */
+  section { padding:80px 0; position:relative; }
+  .section-title { font-size:28px;font-weight:700;color:var(--muted); margin-bottom:18px; }
+  .lead { color:rgba(255,255,255,0.85); font-size:16px; max-width:900px; margin-bottom:18px; }
+
+  /* Cards grid */
+  .grid { display:grid; grid-template-columns:repeat(3,1fr); gap:22px; }
+  .card {
+    border-radius:14px; overflow:hidden; padding:18px; background:var(--glass); border:1px solid var(--glass-border); transition:transform .36s cubic-bezier(.2,.9,.3,1), box-shadow .36s;
+    backdrop-filter: blur(8px);
+  }
+  .card:hover{ transform: translateY(-10px) scale(1.01); box-shadow:0 18px 50px rgba(0,0,0,0.5); }
+
+  .project-card { position:relative; min-height:160px; display:flex; flex-direction:column; gap:8px; }
+  .project-media { height:140px;background:linear-gradient(180deg, rgba(118,60,172,0.15), rgba(44,18,80,0.08)); border-radius:12px; display:flex; align-items:center; justify-content:center; overflow:hidden; }
+  .project-media img{width:100%; height:100%; object-fit:cover}
+  .tags{display:flex;gap:8px;flex-wrap:wrap;margin-top:auto}
+  .tag{font-size:12px;padding:6px 8px;border-radius:999px;background:rgba(255,255,255,0.03); border:1px solid rgba(255,255,255,0.03)}
+
+  /* Skills */
+  .skills { display:flex; flex-wrap:wrap; gap:10px; margin-top:8px; }
+  .skill { background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01)); padding:10px 12px;border-radius:12px;border:1px solid rgba(255,255,255,0.03); color:var(--muted); font-weight:600; }
+
+  /* Contact */
+  .contact-grid{ display:grid; grid-template-columns:1fr 360px; gap:28px; align-items:start; }
+  .contact-form input, .contact-form textarea { width:100%; padding:12px;border-radius:10px;border:1px solid rgba(255,255,255,0.06); background:transparent;color:var(--white); margin-bottom:10px; }
+  .contact-form button{ margin-top:8px; }
+
+  /* Footer */
+  footer{ padding:40px 0; text-align:center; color:rgba(255,255,255,0.55); font-size:14px; }
+
+  /* small decorative dots / ui pieces */
+  .ui-dots{ display:flex; gap:10px; align-items:center; }
+
+  /* animations: starting state */
+  .reveal { opacity:0; transform:translateY(30px); transition: transform .7s cubic-bezier(.2,.9,.3,1), opacity .7s; will-change:transform,opacity }
+  .reveal.in { opacity:1; transform:none; }
+
+  /* tilt on hover for interactive project cards */
+  .tilt { transform-style:preserve-3d; transition:transform .18s ease-out, box-shadow .18s; will-change:transform; }
+  .tilt:hover { box-shadow: 0 22px 60px rgba(0,0,0,0.6); }
+
+  /* responsive */
+  @media (max-width:1000px){
+    .hero{ grid-template-columns:1fr; padding:40px 0; gap:20px; min-height:520px;}
+    .grid{ grid-template-columns: 1fr 1fr }
+    .container{ padding-left:18px;padding-right:18px; }
+  }
+  @media (max-width:640px){
+    .grid{ grid-template-columns: 1fr }
+    .navlinks{ display:none }
+    .hero-title{ font-size:34px }
+  }
+</style>
+</head>
+<body>
+  <div class="site" id="site">
+
+    <!-- blobs -->
+    <div class="blob b1" data-speed="0.06"></div>
+    <div class="blob b2" data-speed="0.04"></div>
+    <div class="blob b3" data-speed="0.03"></div>
+    <div class="blob b4" data-speed="0.045"></div>
+    <div class="blob b5" data-speed="0.02"></div>
+
+    <!-- header -->
+    <header>
+      <div class="nav">
+        <div class="brand">
+          <div class="logo" aria-hidden="true">A</div>
+          <div>
+            <h1 style="font-size:14px;margin:0">S. Adithya</h1>
+            <div style="font-size:11px;color:var(--muted);margin-top:2px">Hardware Innovator · IoT & Drone Systems Engineer</div>
+          </div>
+        </div>
+
+        <nav class="navlinks" aria-label="Main">
+          <a href="#home">Home</a>
+          <a href="#about">About</a>
+          <a href="#projects">Projects</a>
+          <a href="#skills">Skills</a>
+          <a href="#contact">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- HERO -->
+    <main class="container" id="home">
+      <section class="hero" aria-label="Hero section">
+        <div class="hero-left">
+          <div class="eyebadge reveal" data-delay="60">Founder @ NUKE LABS</div>
+          <h2 class="hero-title reveal" data-delay="120">Turns ideas<br>into reality...</h2>
+          <div class="hero-sub reveal" data-delay="200">I’m a maker — electronics & robotics engineer focused on drones, embedded IoT, and building hardware-first products. I run workshops and build prototypes that go from concept to field-ready.</div>
+
+          <div class="hero-cta reveal" data-delay="280">
+            <button class="btn-primary" onclick="document.getElementById('contact').scrollIntoView({behavior:'smooth'})">Work with me</button>
+            <a class="btn-outline" href="#projects">See projects</a>
+          </div>
+
+          <div style="margin-top:28px;display:flex;gap:18px;align-items:center" class="reveal" data-delay="340">
+            <div style="display:flex;flex-direction:column">
+              <div style="font-size:12px;color:var(--muted)">Location</div>
+              <div style="font-weight:700">India</div>
+            </div>
+            <div style="display:flex;flex-direction:column">
+              <div style="font-size:12px;color:var(--muted)">Availability</div>
+              <div style="font-weight:700">Freelance · Mentoring</div>
+            </div>
+          </div>
+
+        </div>
+        
+        <aside class="hero-right reveal" data-delay="120" aria-hidden="false">
+          <h3>Quick profile</h3>
+          <div class="hero-meta">
+            Founder & Hardware Engineer at NUKE LABS — building modular drones, IoT devices and running hands-on STEM workshops for colleges.
+          </div>
+
+          <div class="hero-stats" style="margin-top:16px">
+            <div class="stat">
+              <div class="num">8+</div>
+              <div style="font-size:12px;color:var(--muted)">Projects</div>
+            </div>
+            <div class="stat">
+              <div class="num">3</div>
+              <div style="font-size:12px;color:var(--muted)">Workshops</div>
+            </div>
+            <div class="stat">
+              <div class="num">5y</div>
+              <div style="font-size:12px;color:var(--muted)">Experience</div>
+            </div>
+          </div>
+
+          <div style="margin-top:16px;display:flex;gap:10px;align-items:center;">
+            <a class="btn-outline" href="#" onclick="openResume()">Resume</a>
+            <a class="btn-outline" href="mailto:adithya@example.com">Email</a>
+          </div>
+        </aside>
+      </section>
+    </main>
+
+    <!-- ABOUT -->
+    <div class="container" id="about">
+      <section>
+        <div class="section-title reveal" data-delay="60">About</div>
+        <p class="lead reveal" data-delay="120">
+          I'm S. Adithya — a self-taught maker and entrepreneur who focuses on hardware-first products. I design embedded systems (STM32, ESP32), build agricultural drones for spraying and seeding, and run workshops that teach students hands-on robotics and IoT.
+          <br><br>
+          I believe great products come from rapid prototyping, iteration, and user testing — I enjoy building the full stack: firmware, electronics, mechanical fixtures, and simple web tools to control them.
+        </p>
+
+        <div style="display:flex;gap:18px;flex-wrap:wrap" class="reveal" data-delay="180">
+          <div class="card" style="min-width:260px;max-width:420px;">
+            <h4 style="margin:0 0 8px 0">NUKE LABS — Founder</h4>
+            <div style="color:var(--muted);font-size:14px">Leading a small team to build hardware prototypes and run STEM workshops across colleges. Focus: drones, embedded platforms, and maker education.</div>
+          </div>
+
+          <div class="card" style="min-width:260px;max-width:420px;">
+            <h4 style="margin:0 0 8px 0">Prototyping</h4>
+            <div style="color:var(--muted);font-size:14px">From seed dispensers for agricultural hexacopters to LDR-controlled home automation and ESP8266 web-configurable clocks.</div>
+          </div>
+
+          <div class="card" style="min-width:260px;max-width:420px;">
+            <h4 style="margin:0 0 8px 0">Workshops</h4>
+            <div style="color:var(--muted);font-size:14px">Hands-on courses teaching embedded systems, drone basics, and maker skills. Designed curriculum for college hackathons and workshops.</div>
+          </div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Projects -->
+    <div class="container" id="projects">
+      <section>
+        <div class="section-title reveal" data-delay="60">Projects</div>
+        <p class="lead reveal" data-delay="120">Selected work — prototypes and products where I handled electronics, firmware and system integration.</p>
+
+        <div class="grid" style="margin-top:22px;">
+          <!-- Project 1 -->
+          <article class="card project-card tilt reveal" data-delay="180" data-tilt>
+            <div class="project-media">
+              <img src="https://placehold.co/800x480?text=Agricultural+Drone" alt="Agricultural Drone">
+            </div>
+            <h4 style="margin:8px 0 0 0">Modular Agricultural Drone</h4>
+            <div style="color:var(--muted);font-size:13px;margin-top:6px">Hexacopter for seeding & spraying with centrifugal dispenser and modular nozzles.</div>
+            <div class="tags">
+              <span class="tag">Embedded</span><span class="tag">Aerial</span><span class="tag">PCB</span>
+            </div>
+            <div style="margin-top:10px;"><a href="#" class="btn-outline" onclick="openProject(1)">View details</a></div>
+          </article>
+
+          <!-- Project 2 -->
+          <article class="card project-card tilt reveal" data-delay="200" data-tilt>
+            <div class="project-media">
+              <img src="https://placehold.co/800x480?text=IoT+MAX7219+Web+Clock" alt="MAX7219 Web Clock">
+            </div>
+            <h4 style="margin:8px 0 0 0">ESP8266 MAX7219 Web Clock</h4>
+            <div style="color:var(--muted);font-size:13px;margin-top:6px">Matrix-clock with web-configurable alarm and scrolling date — integrated with a buzzer alarm.</div>
+            <div class="tags">
+              <span class="tag">IoT</span><span class="tag">Firmware</span>
+            </div>
+            <div style="margin-top:10px;"><a href="#" class="btn-outline" onclick="openProject(2)">View details</a></div>
+          </article>
+
+          <!-- Project 3 -->
+          <article class="card project-card tilt reveal" data-delay="220" data-tilt>
+            <div class="project-media">
+              <img src="https://placehold.co/800x480?text=Workshop+Curriculum" alt="Workshops">
+            </div>
+            <h4 style="margin:8px 0 0 0">Drone & Robotics Workshops</h4>
+            <div style="color:var(--muted);font-size:13px;margin-top:6px">Full curriculum and hands-on sessions for students — building drones, soldering, and programming controllers.</div>
+            <div class="tags">
+              <span class="tag">Teaching</span><span class="tag">Curriculum</span>
+            </div>
+            <div style="margin-top:10px;"><a href="#" class="btn-outline" onclick="openProject(3)">View details</a></div>
+          </article>
+
+        </div>
+      </section>
+    </div>
+
+    <!-- Skills -->
+    <div class="container" id="skills">
+      <section>
+        <div class="section-title reveal" data-delay="60">Skills & Tools</div>
+        <p class="lead reveal" data-delay="120">Hands-on technologies and tools I use regularly.</p>
+
+        <div class="skills reveal" data-delay="180">
+          <div class="skill">C / C++</div>
+          <div class="skill">STM32</div>
+          <div class="skill">ESP32 / ESP8266</div>
+          <div class="skill">Drone Design</div>
+          <div class="skill">PCB Design</div>
+          <div class="skill">React</div>
+          <div class="skill">Tailwind (UI)</div>
+          <div class="skill">Firebase</div>
+          <div class="skill">Python</div>
+        </div>
+      </section>
+    </div>
+
+    <!-- Contact -->
+    <div class="container" id="contact">
+      <section>
+        <div class="section-title reveal" data-delay="60">Contact</div>
+        <p class="lead reveal" data-delay="120">I'm open to freelance, collaborations, and mentoring. Reach out and let's build something.</p>
+
+        <div class="contact-grid reveal" data-delay="180">
+          <form class="contact-form" onsubmit="sendMail(event)">
+            <input type="text" id="name" placeholder="Your name" required/>
+            <input type="email" id="email" placeholder="Your email" required/>
+            <textarea id="message" rows="6" placeholder="Tell me about your project..." required></textarea>
+            <button class="btn-primary" type="submit">Send message</button>
+          </form>
+
+          <aside class="card" style="padding:20px;">
+            <h4 style="margin-top:0">Quick contact</h4>
+            <p style="color:var(--muted)">Email</p>
+            <p style="font-weight:700">adithya@example.com</p>
+
+            <p style="color:var(--muted);margin-top:18px">Social</p>
+            <div style="display:flex;gap:10px;margin-top:8px">
+              <a href="#" class="btn-outline">GitHub</a>
+              <a href="#" class="btn-outline">LinkedIn</a>
+            </div>
+
+            <div style="margin-top:20px;color:var(--muted)">Location</div>
+            <div style="font-weight:700">India</div>
+          </aside>
+        </div>
+      </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+      © <span id="year"></span> S. Adithya — Built with ❤️ · NUKE LABS · <span style="color:var(--muted)">Electronics & Drones</span>
+    </footer>
+
+    <!-- Project Modal (simple) -->
+    <div id="projectModal" style="position:fixed;left:0;top:0;right:0;bottom:0;display:none;align-items:center;justify-content:center;background:rgba(0,0,0,0.6);z-index:120;">
+      <div style="width:min(960px,96%);background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(255,255,255,0.01));border-radius:14px;padding:22px;border:1px solid rgba(255,255,255,0.06);box-shadow:0 30px 80px rgba(0,0,0,0.7);">
+        <button onclick="closeModal()" style="float:right;background:transparent;border:none;color:var(--muted);font-weight:700;font-size:18px;cursor:pointer">✕</button>
+        <h3 id="modalTitle">Project</h3>
+        <p id="modalBody" style="color:var(--muted)">Details</p>
+      </div>
+    </div>
+
+  </div>
+
+<script>
+  // set year
+  document.getElementById('year').textContent = new Date().getFullYear();
+
+  // Smooth reveal on scroll (IntersectionObserver)
+  (function(){
+    const els = Array.from(document.querySelectorAll('.reveal'));
+    const io = new IntersectionObserver((entries)=>{
+      entries.forEach(ent => {
+        if(ent.isIntersecting){
+          ent.target.classList.add('in');
+          // stagger via data-delay
+          const d = parseInt(ent.target.getAttribute('data-delay')||0);
+          ent.target.style.transitionDelay = (d/1000)+'s';
+          // unobserve to keep performance
+          io.unobserve(ent.target);
+        }
+      });
+    }, {threshold:0.06});
+    els.forEach(e => io.observe(e));
+  })();
+
+  // parallax blobs by scroll and mouse
+  (function(){
+    const blobs = document.querySelectorAll('.blob');
+    const speeds = Array.from(blobs).map(b => parseFloat(b.dataset.speed||0.03));
+    window.addEventListener('scroll', () => {
+      const y = window.scrollY;
+      blobs.forEach((b,i) => {
+        b.style.transform = `translate3d(0, ${y * speeds[i]}px, 0)`;
+      });
+    }, {passive:true});
+
+    // mouse parallax for hero title area (subtle)
+    const site = document.getElementById('site');
+    site.addEventListener('mousemove', (e) => {
+      const cx = window.innerWidth/2;
+      const cy = window.innerHeight/2;
+      const dx = (e.clientX - cx) / cx;
+      const dy = (e.clientY - cy) / cy;
+      blobs.forEach((b,i)=>{
+        const m = (i+1) * 6;
+        b.style.transform += ` translate3d(${dx * m}px, ${dy * m}px, 0)`;
+      });
+    });
+  })();
+
+  // tilt effect for project cards
+  (function(){
+    const tilts = document.querySelectorAll('[data-tilt]');
+    tilts.forEach(el => {
+      el.addEventListener('mousemove', (ev) => {
+        const r = el.getBoundingClientRect();
+        const px = (ev.clientX - r.left) / r.width;
+        const py = (ev.clientY - r.top) / r.height;
+        const rotateY = (px - 0.5) * 10;
+        const rotateX = (0.5 - py) * 8;
+        el.style.transform = `perspective(900px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) translateZ(6px)`;
+      });
+      el.addEventListener('mouseleave', () => {
+        el.style.transform = '';
+      });
+    });
+  })();
+
+  // contact form (opens mail client)
+  function sendMail(e){
+    e.preventDefault();
+    const name = document.getElementById('name').value.trim();
+    const email = document.getElementById('email').value.trim();
+    const message = document.getElementById('message').value.trim();
+    const subject = encodeURIComponent(`Portfolio message from ${name}`);
+    const body = encodeURIComponent(`Name: ${name}\nEmail: ${email}\n\n${message}`);
+    window.location.href = `mailto:maker.adithya@gmail.com.com?subject=${subject}&body=${body}`;
+  }
+
+  // Resume placeholder
+  function openResume(){
+    // if you host resume.pdf, replace URL below
+    window.open('https://placehold.co/600x800?text=Resume+Placeholder','_blank');
+  }
+
+  // Project modal
+  function openProject(id){
+    const modal = document.getElementById('projectModal');
+    const title = document.getElementById('modalTitle');
+    const body = document.getElementById('modalBody');
+    if(id === 1){
+      title.textContent = 'Modular Agricultural Drone';
+      body.innerHTML = '<strong>Summary:</strong> Hexacopter with modular spraying and centrifugal seeding dispenser. <br><br><strong>Stack:</strong> STM32 flight controller, custom power distribution, Molicel battery pack, spray manifold and ground-tested seeding mechanism.<br><br><strong>Notes:</strong> Terrain-adaptive flight paths, anti-collision sensors, and modular payload bays.';
+    } else if (id === 2){
+      title.textContent = 'ESP8266 MAX7219 Web Clock';
+      body.innerHTML = '<strong>Summary:</strong> 4-in-1 MAX7219 matrix driven by ESP8266 with web UI to set time and alarm. <br><br><strong>Stack:</strong> ESP8266, MAX7219 drivers, web UI, buzzer alarm and NTP sync.';
+    } else if (id === 3){
+      title.textContent = 'Drone & Robotics Workshops';
+      body.innerHTML = '<strong>Summary:</strong> Curriculum and practical sessions on drone basics, soldering, microcontrollers and simple autonomy. <br><br><strong>Audience:</strong> College workshops & hackathons.';
+    } else {
+      title.textContent = 'Project';
+      body.textContent = 'Details coming soon.';
+    }
+    modal.style.display = 'flex';
+  }
+  function closeModal(){ document.getElementById('projectModal').style.display = 'none'; }
+
+  // anchor smooth scroll fallback
+  document.querySelectorAll('a[href^="#"]').forEach(a=>{
+    a.addEventListener('click', function(e){
+      const t = document.querySelector(this.getAttribute('href'));
+      if(t) { e.preventDefault(); t.scrollIntoView({behavior:'smooth'}); }
+    });
+  });
+</script>
+</body>
+</html>
