@@ -50,7 +50,7 @@
 .skill:hover {
   transform: scale(1.1);
   box-shadow: 0 0 25px rgba(255,255,255,0.6);
-  background: rgba(255,255,255,0.2);
+  background: rgba(219, 209, 209, 0.2);
 }
 
 /* Smooth pulsing glow */
@@ -133,7 +133,7 @@
   .navlinks a:hover{opacity:1;text-decoration:underline}
 
   /* Layout */
-  .container { max-width:1200px;margin:0 auto;padding:40px 22px; position:relative; z-index:10; }
+  .container { max-width:1200px;margin:0 auto;padding:20px 22px; position:relative; z-index:10; }
 
   /* Hero */
   .hero { display:grid;grid-template-columns:1fr 420px;gap:36px;align-items:center;padding:80px 0 40px;min-height:560px; }
@@ -142,7 +142,7 @@
   .hero-title { font-family:Preahvihear;font-size:56px;line-height:1.02;margin:0;color:var(--white); text-shadow:0 6px 30px rgba(0,0,0,0.5) }
   .hero-sub { font-size:20px;color:rgba(255,255,255,0.88);margin-top:18px;max-width:720px; }
   .hero-cta { margin-top:26px; display:flex; gap:14px; }
-  .btn-primary { background: linear-gradient(90deg,var(--accent-1),var(--accent-2)); color:#0b0712;padding:12px 18px;border-radius:12px;font-weight:700;border:none;cursor:pointer; box-shadow:0 10px 30px rgba(118,60,172,0.18); }
+  .btn-primary { background: linear-gradient(90deg,var(--accent-1),var(--accent-2)); color:#ffffff;padding:12px 18px;border-radius:12px;font-weight:700;border:none;cursor:pointer; box-shadow:0 10px 30px rgba(118,60,172,0.18); }
   .btn-outline { background:transparent;border:1px solid rgba(255,255,255,0.06);padding:10px 16px;border-radius:12px;color:var(--white);cursor:pointer }
 
   /* Right hero card (glassy) */
@@ -198,7 +198,7 @@
 
   /* responsive */
   @media (max-width:1000px){
-    .hero{ grid-template-columns:1fr; padding:40px 0; gap:20px; min-height:520px;}
+    .hero{ grid-template-columns:1fr; padding:4px 0; gap:20px; min-height:520px;}
     .grid{ grid-template-columns: 1fr 1fr }
     .container{ padding-left:18px;padding-right:18px; }
   }
@@ -233,7 +233,7 @@
         <nav class="navlinks" aria-label="Main">
           <a href="#home">Home</a>
           <a href="#about">About</a>
-          <a href="#projects">Projects</a>
+          <!--<a href="#projects">Projects</a> -->
           <a href="#skills">Skills</a>
           <a href="#contact">Contact</a>
         </nav>
@@ -260,7 +260,7 @@
             </div>
             <div style="display:flex;flex-direction:column">
               <div style="font-size:12px;color:var(--muted)">Availability</div>
-              <div style="font-weight:700">Freelance · Mentoring</div>
+              <div style="font-weight:700">Collabs · Mentoring</div>
             </div>
           </div>
 
@@ -272,7 +272,7 @@
  
           <h3>Quick profile</h3>
           <div class="hero-meta">
-            Founder & Hardware Engineer at NUKE LABS — building modular drones, IoT devices and running hands-on STEM workshops for colleges.
+            Founder & Hardware Engineer at NUKE LABS — building modular drones, Embedded devices and running hands-on STEM workshops for colleges.
           </div>
 
           <div class="hero-stats" style="margin-top:16px">
@@ -285,7 +285,7 @@
 
           <div style="margin-top:16px;display:flex;gap:10px;align-items:center;">
             <a class="btn-outline" href="#" onclick="openResume()">LinkedIn</a>
-            <a class="btn-outline" href="mailto:adithya@example.com">Email</a>
+            <a class="btn-outline" href="mailto:maker.adithya@gmai.com">Email</a>
           </div>
         </aside>
       </section>
@@ -296,7 +296,7 @@
       <section>
         <div class="section-title reveal" data-delay="60">About</div>
         <p class="lead reveal" data-delay="120">
-          I'm S. Adithya — a self-taught maker and entrepreneur who focuses on hardware-first products. I design embedded systems (STM32, ESP32), build agricultural drones for spraying and seeding, and run workshops that teach students hands-on robotics and IoT.
+          I'm S Adithya — a self-taught maker and entrepreneur who focuses on hardware-first products. I design embedded systems,  and run workshops that teach students hands-on robotics and IoT.
           <br><br>
           I believe great products come from rapid prototyping, iteration, and user testing — I enjoy building the full stack: firmware, electronics, mechanical fixtures, and simple web tools to control them.
         </p>
@@ -309,7 +309,7 @@
 
           <div class="card" style="min-width:260px;max-width:420px;">
             <h4 style="margin:0 0 8px 0">Prototyping</h4>
-            <div style="color:var(--muted);font-size:14px">From seed dispensers for agricultural hexacopters to LDR-controlled home automation and ESP8266 web-configurable clocks.</div>
+            <div style="color:var(--muted);font-size:14px">From agricultural hexacopters to fully autonomous vision controlled surveillance drones</div>
           </div>
 
           <div class="card" style="min-width:260px;max-width:420px;">
@@ -320,14 +320,14 @@
       </section>
     </div>
 
-    <!-- Projects -->
+    <!-- Projects 
     <div class="container" id="projects">
       <section>
         <div class="section-title reveal" data-delay="60">Projects</div>
         <p class="lead reveal" data-delay="120">Selected work — prototypes and products where I handled electronics, firmware and system integration.</p>
 
         <div class="grid" style="margin-top:22px;">
-          <!-- Project 1 -->
+         
           <article class="card project-card tilt reveal" data-delay="180" data-tilt>
             <div class="project-media">
               <img src="https://placehold.co/800x480?text=Agricultural+Drone" alt="Agricultural Drone">
@@ -340,7 +340,7 @@
             <div style="margin-top:10px;"><a href="#" class="btn-outline" onclick="openProject(1)">View details</a></div>
           </article>
 
-          <!-- Project 2 -->
+
           <article class="card project-card tilt reveal" data-delay="200" data-tilt>
             <div class="project-media">
               <img src="https://placehold.co/800x480?text=IoT+MAX7219+Web+Clock" alt="MAX7219 Web Clock">
@@ -353,7 +353,7 @@
             <div style="margin-top:10px;"><a href="#" class="btn-outline" onclick="openProject(2)">View details</a></div>
           </article>
 
-          <!-- Project 3 -->
+
           <article class="card project-card tilt reveal" data-delay="220" data-tilt>
             <div class="project-media">
               <img src="https://placehold.co/800x480?text=Workshop+Curriculum" alt="Workshops">
@@ -369,7 +369,7 @@
         </div>
       </section>
     </div>
-
+    -->
     <!-- Skills -->
     <div class="container" id="skills">
       <section>
@@ -416,13 +416,13 @@
 
         <p style="color:var(--muted);margin-top:20px;">Social Links</p>
         <div style="display:flex;gap:12px;margin-top:8px;flex-wrap:wrap;">
-          <a href="https://github.com/YOUR_GITHUB_USERNAME" target="_blank" class="btn-outline">
+          <a href="https://github.com/adithya-in" target="_blank" class="btn-outline">
             <i class="fab fa-github" style="color:#6e5494;"></i> GitHub
           </a>
-          <a href="https://www.linkedin.com/in/YOUR_LINKEDIN_ID" target="_blank" class="btn-outline">
+          <a href="https://www.linkedin.com/in/s-adithya-76224b366/" target="_blank" class="btn-outline">
             <i class="fab fa-linkedin" style="color:#0A66C2;"></i> LinkedIn
           </a>
-          <a href="https://www.instagram.com/YOUR_INSTAGRAM_ID" target="_blank" class="btn-outline">
+          <a href="https://www.instagram.com/adithya.fr_/" target="_blank" class="btn-outline">
             <i class="fab fa-instagram" style="color:#E4405F;"></i> Instagram
           </a>
         </div>
